@@ -3,8 +3,9 @@
  */
 package com.quoioln.stringramdom;
 
-import org.apache.commons.lang3.RandomStringUtils;
 import static org.junit.Assert.assertEquals;
+
+import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Test;
 
 import com.quoioln.user.User;
