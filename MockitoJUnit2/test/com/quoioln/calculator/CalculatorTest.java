@@ -1,6 +1,8 @@
 package com.quoioln.calculator;
 
 import static org.mockito.Mockito.*;//doThrow;
+import static com.googlecode.catchexception.CatchException.*;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -9,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
@@ -16,7 +19,7 @@ import org.mockito.runners.MockitoJUnitRunner;
  * @author vpquoi
  *
  */
-@RunWith(MockitoJUnitRunner.class)
+//@RunWith(MockitoJUnitRunner.class)
 public class CalculatorTest {
 //	@Mock
 	private Calculator calc;
@@ -28,8 +31,8 @@ public class CalculatorTest {
 	@Before
 	public void before() {
 		System.out.println("Before method");
-//		calc = new Calculator();
-		calc = mock(Calculator.class);
+		calc = new Calculator();
+//		calc = mock(Calculator.class);
 		System.out.println("Create calc");
 	}
 
@@ -48,10 +51,13 @@ public class CalculatorTest {
 //		Assert.assertEquals(5, calc.add(2, 3), 0);
 //	}
 	
-	@Test (expected = RuntimeException.class)
+//	@Test (expected = ArithmeticException.class)
+	@Test
 	public void testDivide_2_0_0 (){
-		doThrow(new RuntimeException("Divide operation not excute")).when(calc).add(2, 0);
-		Assert.assertEquals(0, calc.add(2, 0), 0);
-		verify(calc).add(2, 0);
+//		doThrow(new ArithmeticException("Divide operation not excute")).when(calc).add(2, 0);
+//		Assert.assertEquals(0, calc.divide(2, 0), 0);
+		catchException(calc).divide(2, 0);
+		Assert.assertTrue(caughtException() instanceof ArithmeticException);
+//		verify(calc).divide(2, 0);
 	}
 }

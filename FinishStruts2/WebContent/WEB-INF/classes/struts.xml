@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD
+ Struts Configuration 2.1//EN" 
+"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="default" extends="struts-default">
+
+		<action name="login">
+			<result name="success" type="redirectAction">
+				<param name="actionName">
+					LoginURL
+				</param>
+			</result>
+		</action>
+		<action name="LoginURL">
+			<result>
+				/WEB-INF/content/login.jsp
+			</result>
+		</action>
+
+		<action name="loginprocess" class="com.ntts.struts2.login.LoginAction">
+			<result name="success">/WEB-INF/content/login-success.jsp</result>
+			<result name="error">/WEB-INF/content/login-error.jsp</result>
+		</action>
+
+		<action name="logout" class="com.ntts.struts2.login.LoginAction"
+			method="logout">
+			<result name="success">logoutsuccess.jsp</result>
+		</action>
+
+		<action name="profile" class="com.ntts.struts2.profile.ProfileAction">
+			<result name="success">profilesuccess.jsp</result>
+			<result name="error">profileerror.jsp</result>
+		</action>
+
+		<action name="register">
+			<result>/WEB-INF/content/register.jsp</result>
+		</action>
+
+		<action name="registerprocess" class="com.ntts.struts2.register.RegisterAction">
+			<result name="success">/WEB-INF/content/register-success.jsp</result>
+			<result name="error">/WEB-INF/content/register-error.jsp</result>
+		</action>
+
+	</package>
+</struts>  
