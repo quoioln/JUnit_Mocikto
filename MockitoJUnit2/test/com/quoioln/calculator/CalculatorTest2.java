@@ -1,8 +1,7 @@
 package com.quoioln.calculator;
-import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.inOrder;
-import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import org.junit.After;
 import org.junit.AfterClass;

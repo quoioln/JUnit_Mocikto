@@ -1,7 +1,7 @@
 package com.quoioln.calculator;
 
-import static org.mockito.Mockito.*;//doThrow;
-import static com.googlecode.catchexception.CatchException.*;
+import static com.googlecode.catchexception.CatchException.catchException;
+import static com.googlecode.catchexception.CatchException.caughtException;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -9,11 +9,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
 
 /**
  * @author vpquoi

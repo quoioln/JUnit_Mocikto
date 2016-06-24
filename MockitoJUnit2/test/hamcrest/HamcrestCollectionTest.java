@@ -1,12 +1,8 @@
 /**
  * 
  */
-package com.quoioln.fest;
+package hamcrest;
 
-/**
- * @author vpquoi
- *
- */
 import static org.fest.assertions.Assertions.assertThat;
 import static org.fest.assertions.MapAssert.entry;
 
@@ -17,10 +13,11 @@ import java.util.Set;
 
 import org.junit.Before;
 import org.junit.Test;
-public class FestCollectiontest {
+public class HamcrestCollectionTest {
 	private Set<String> setA;
 	private Set<String> setB;
 	
+	HashMap<String, Integer> map = new LinkedHashMap<String, Integer>();
 	@Before
 	public void beforeMethod() {
 		setA = new HashSet<String>();
@@ -35,12 +32,13 @@ public class FestCollectiontest {
 		setA.add(s1);
 		setA.add(s2);
 //		setA.add(s3);
-		assertThat(setA).isNotEmpty().hasSize(2).doesNotHaveDuplicates();
-		assertThat(setA).containsOnly(s1, s2);
+//		assertThat(setA, hasItem(s1));
+//		assertThat(setA, hasItem(s2));
+//		assertThat(setA, hasItem("xyz"));
+//		assertThat(setA, hasItems(s1, s2, "xyz"));
 	}
 	@Test
-	public void mapUtilityMethods() {
-		HashMap<String, Integer> map = new LinkedHashMap<String, Integer>();
+	public void mapsUtilityMethods() {
 		map.put("a", 2);
 		map.put("b", 3);
 		assertThat(map).isNotNull().isNotEmpty()

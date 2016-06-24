@@ -1,12 +1,6 @@
 package com.quoioln.calculator;
-import static org.mockito.Mockito.when;
-
 import java.util.Arrays;
 import java.util.Collection;
-
-import static org.mockito.Mockito.inOrder;
-import static org.mockito.Mockito.doThrow;
-import static org.mockito.Mockito.mock;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -16,10 +10,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
-import org.mockito.InOrder;
-import org.mockito.runners.MockitoJUnitRunner;
 
 /**
  * @author vpquoi
