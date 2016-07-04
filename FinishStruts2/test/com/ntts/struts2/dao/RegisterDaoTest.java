@@ -49,7 +49,7 @@ public class RegisterDaoTest {
 	
 	@Test
 	public void test_RegisterDao(){
-		try{
+//		try{
 			RegisterAction action = new RegisterAction();
 			
 			action.setFullname("test123");
@@ -65,10 +65,10 @@ public class RegisterDaoTest {
 			int result = RegisterDao.save(conn, action);
 			
 			Assert.assertEquals(1, result);
-		}catch(Exception e){
-			System.out.println("FAIL" );
-			Assert.fail("has exception");
-		}
+//		}catch(Exception e){
+//			System.out.println("FAIL" );
+//			Assert.fail("has exception");
+//		}
 
 		
 

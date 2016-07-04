@@ -4,9 +4,8 @@ package com.ntts.struts2.mocksingleton;
 public class MockSingleton {
 	
 	private static MockSingleton instance;
-	
+	private int a;
 	private MockSingleton(){
-		
 	}
 	
 	public static MockSingleton getInstance(){
@@ -20,5 +19,7 @@ public class MockSingleton {
 		return "Singleton";
 	}
 	
-
+	public int getA() {
+		return a;
+	}
 }

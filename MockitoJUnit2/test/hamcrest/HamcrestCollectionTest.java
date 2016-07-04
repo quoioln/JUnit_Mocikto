@@ -9,14 +9,24 @@ import static org.fest.assertions.MapAssert.entry;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Set;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations.Mock;
+import org.mockito.Spy;
+import org.mockito.runners.MockitoJUnitRunner;
+@RunWith(MockitoJUnitRunner.class)
 public class HamcrestCollectionTest {
 	private Set<String> setA;
 	private Set<String> setB;
-	
+	@Mock
+	List<String> list;// = Mockito.mock(List.class);
 	HashMap<String, Integer> map = new LinkedHashMap<String, Integer>();
 	@Before
 	public void beforeMethod() {
@@ -43,5 +53,9 @@ public class HamcrestCollectionTest {
 		map.put("b", 3);
 		assertThat(map).isNotNull().isNotEmpty()
 			.includes(entry("a", 2), entry("b", 3)).excludes(entry("c", 1));
+		
+		Mockito.when(list.size()).thenReturn(6);
+		System.out.println(list.size());
+		Assert.assertEquals(5, list.size());
 	}
 }

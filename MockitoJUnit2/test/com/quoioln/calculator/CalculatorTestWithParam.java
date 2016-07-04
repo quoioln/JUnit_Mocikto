@@ -11,6 +11,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations.Mock;
 
 /**
  * @author vpquoi
@@ -19,9 +21,7 @@ import org.junit.runners.Parameterized.Parameters;
 //@RunWith(MockitoJUnitRunner.class)
 @RunWith(value = Parameterized.class)
 public class CalculatorTestWithParam {
-	
-//	private Calculator calc = mock(Calculator.class);
-	private Calculator calc = new Calculator();
+	private Calculator calc =  new Calculator();
 	
 	private double a, b, c;
 	
@@ -47,9 +47,6 @@ public class CalculatorTestWithParam {
 	@Before
 	public void before() {
 		System.out.println("Before method");
-//		calc = new Calculator();
-//		calc = mock(Calculator.class);
-//		calc = 
 		System.out.println("Create calc");
 	}
 
@@ -67,10 +64,10 @@ public class CalculatorTestWithParam {
 	
 	public void testAdd(){
 //		Calculator calc = mock(Calculator.class);
-//		when(calc.add(a, b)).thenReturn(c);
-		System.out.println(a + " + " + b + " = " + c);
+//		Mockito.when(calc.add(1.0, 2.0)).thenReturn(10.0); //.add(a, b).thenReturn(10);
+//		System.out.println(a + " + " + b + " = " + c);
 		
-		Assert.assertEquals(c, calc.add(a, b), 0);
+		Assert.assertEquals(c, Calculator.add(a, b), 0);
 	}
 	
 }
