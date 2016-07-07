@@ -18,7 +18,7 @@ import org.mockito.runners.MockitoJUnitRunner;
  */
 @RunWith(MockitoJUnitRunner.class)
 public class TestClient {
-	private Client client = Mockito.mock(Client.class);
+	private Client client;// = Mockito.mock(Client.class);
 	
 	@Before
 	public void before() {
@@ -37,8 +37,9 @@ public class TestClient {
 		client.addPhone(phone2);
 		
 		Assert.assertTrue(client.hasMobiles());
-		Mockito.verify(client, Mockito.times(2)).addPhone(Mockito.any(Phone.class));
-		Mockito.verify(phone1).isMobile();
+//		Mockito.verify(client, Mockito.times(2)).addPhone(Mockito.any(Phone.class));
+		Mockito.verify(phone1, Mockito.times(1)).isMobile();
 		Mockito.verify(phone3, Mockito.never()).isMobile();
+//		Mockito.
 	}
 }

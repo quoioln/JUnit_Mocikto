@@ -19,10 +19,13 @@ public class PrivateMethodReflectionTest {
 		throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
 		
 		SomeClass sut = new SomeClass();
-		Method m = sut.getClass().getDeclaredMethod("privateMethod", java.lang.Long.class);
+		Class[] parameterTypes = new Class[1];
+		parameterTypes[0] = java.lang.Long.class;
+		Method m = sut.getClass().getDeclaredMethod("privateMethod", parameterTypes);
 		m.setAccessible(true);
-
-		Boolean result = (Boolean) m.invoke(sut, 5569L);
+		Object[] parameters = new Object[1];
+		parameters[0] = 5569L;
+		Boolean result = (Boolean) m.invoke(sut, parameters);
 		Assert.assertTrue(result);
 	}
 }

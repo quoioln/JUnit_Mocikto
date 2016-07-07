@@ -13,7 +13,7 @@ import org.junit.Test;
 public class PersonTest {
 	@Test public void testGetName() {
 		Person person = new Person("vpquoi", 22);
-		String expected = "vpquoi"; 
+		String expected = "quoioln"; 
 		String actual = person.getName();
 		Assert.assertEquals(expected , actual);
 	} 
